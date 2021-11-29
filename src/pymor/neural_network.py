@@ -14,15 +14,6 @@ from pymor.config import config
 
 
 if config.HAVE_TORCH:
-    from numbers import Number
-
-    import numpy as np
-
-    import torch
-    import torch.nn as nn
-    import torch.optim as optim
-    import torch.utils as utils
-
 
     class NeuralNetworkReductor:
         """Reduced Basis reductor relying on artificial neural networks.
