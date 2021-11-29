@@ -31,7 +31,6 @@ extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.coverage',
               'sphinx.ext.autosummary',
               'sphinx.ext.intersphinx',
-              'pymordocstring',
               'sphinx.ext.mathjax',
               'autoapi.extension',
               ]
