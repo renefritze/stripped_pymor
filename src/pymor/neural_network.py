@@ -26,6 +26,7 @@ if config.HAVE_TORCH:
             """Reduce by training artificial neural networks.
             """
 
+if config.HAVE_TORCH:
     class NeuralNetworkStatefreeOutputReductor:
         """Output reductor relying on artificial neural networks.
         """
@@ -44,6 +45,7 @@ if config.HAVE_TORCH:
             assert isinstance(hidden_layers, list)
             return [self.fom.parameters.dim, ] + hidden_layers + [self.fom.dim_output, ]
 
+if config.HAVE_TORCH:
 
     class NeuralNetworkInstationaryReductor(NeuralNetworkReductor):
         """Reduced Basis reductor for instationary problems relying on artificial neural networks.
