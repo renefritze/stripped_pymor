@@ -33,38 +33,12 @@ extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.linkcode',
               'sphinx.ext.intersphinx',
               'pymordocstring',
-              'try_on_binder',
-              'myst_nb',
               'sphinx.ext.mathjax',
               'sphinx_qt_documentation',
               'autoapi.extension',
               'autoapi_pymor',
-              'sphinxcontrib.bibtex',
               ]
-# this enables:
-# substitutions-with-jinja2, direct-latex-math and definition-lists
-# ref: https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
-myst_enable_extensions = [
-    "dollarmath",
-    "amsmath",
-    "deflist",
-    "html_image",
-    "colon_fence",
-    "smartquotes",
-    "replacements",
-    "substitution",
-]
-myst_url_schemes = ["http", "https", "mailto"]
-# auto genereated link anchors
-myst_heading_anchors = 2
-import substitutions # noqa
-myst_substitutions = substitutions.myst_substitutions
-jupyter_execute_notebooks = "cache"
-execution_timeout = 180
-# print tracebacks to stdout
-execution_show_tb = True
 
-bibtex_bibfiles = ['bibliography.bib']
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -89,7 +63,6 @@ copyright = '2013-2021 pyMOR developers and contributors'
 import pymor  # noqa
 import autoapi_pymor # noqa
 version = pymor.__version__
-rst_epilog = substitutions.substitutions
 
 # The full version, including alpha/beta/rc tags.
 release = version.split('-')[0]
@@ -282,20 +255,6 @@ modindex_common_prefix = ['pymor.']
 
 # make intersphinx link to pyside2 docs
 qt_documentation = 'PySide2'
-
-branch = os.environ.get('CI_COMMIT_REF_NAME', 'main')
-# this must match PYMOR_ROOT/.ci/gitlab/deploy_docs
-try_on_binder_branch = branch.replace('github/PUSH_', 'from_fork__')
-try_on_binder_slug = os.environ.get('CI_COMMIT_REF_SLUG', slugify.slugify(try_on_binder_branch))
-
-
-def linkcode_resolve(domain, info):
-    if domain == 'py':
-        if not info['module']:
-            return None
-        filename = info['module'].replace('.', '/')
-        return f'https://github.com/pymor/pymor/tree/{branch}/src/{filename}.py'
-    return None
 
 
 autoapi_dirs = [src_dir / 'pymor']
