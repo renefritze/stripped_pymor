@@ -34,7 +34,6 @@ extensions = ['sphinx.ext.autodoc',
               'pymordocstring',
               'sphinx.ext.mathjax',
               'autoapi.extension',
-              'autoapi_pymor',
               ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -59,7 +58,6 @@ copyright = '2013-2021 pyMOR developers and contributors'
 # other places throughout the built documents.
 # imports have to be delayed until after sys.path modification
 import pymor  # noqa
-import autoapi_pymor # noqa
 version = pymor.__version__
 
 # The full version, including alpha/beta/rc tags.
