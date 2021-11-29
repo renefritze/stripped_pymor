@@ -31,17 +31,17 @@ if config.HAVE_TORCH:
         orthogonal decomposition and trains a neural network that approximates
         the mapping from parameter space to coefficients of the full-order
         solution in the reduced basis.
-        The approach is described in :cite:`HU18`.
+        The approach is described in
 
         Parameters
         ----------
         fom
-            The full-order |Model| to reduce.
+            The full-order to reduce.
         training_set
-            Set of |parameter values| to use for POD and training of the
+            Set of use for POD and training of the
             neural network.
         validation_set
-            Set of |parameter values| to use for validation in the training
+            Set of use for validation in the training
             of the neural network.
         validation_ratio
             Fraction of the training set to use for validation in the training
@@ -85,7 +85,7 @@ if config.HAVE_TORCH:
                 Number of neurons in the hidden layers. Can either be fixed or
                 a Python expression string depending on the reduced basis size
                 respectively output dimension `N` and the total dimension of
-                the |Parameters| `P`.
+                the
             activation_function
                 Activation function to use between the hidden layers.
             optimizer
@@ -109,7 +109,7 @@ if config.HAVE_TORCH:
             Returns
             -------
             rom
-                Reduced-order |NeuralNetworkModel|.
+                Reduced-order
             """
 
     class NeuralNetworkStatefreeOutputReductor:
@@ -121,12 +121,12 @@ if config.HAVE_TORCH:
         Parameters
         ----------
         fom
-            The full-order |Model| to reduce.
+            The full-order to reduce.
         training_set
-            Set of |parameter values| to use for POD and training of the
+            Set of
             neural network.
         validation_set
-            Set of |parameter values| to use for validation in the training
+            Set of
             of the neural network.
         validation_ratio
             Fraction of the training set to use for validation in the training
@@ -158,17 +158,11 @@ if config.HAVE_TORCH:
         orthogonal decomposition and trains a neural network that approximates
         the mapping from parameter and time space to coefficients of the
         full-order solution in the reduced basis.
-        The approach is described in :cite:`WHR19`.
+        The approach is described in
 
         Parameters
         ----------
         fom
-            The full-order |Model| to reduce.
-        training_set
-            Set of |parameter values| to use for POD and training of the
-            neural network.
-        validation_set
-            Set of |parameter values| to use for validation in the training
             of the neural network.
         validation_ratio
             Fraction of the training set to use for validation in the training

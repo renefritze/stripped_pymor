@@ -30,11 +30,9 @@ sys.path.insert(0, str(this_dir))
 extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.coverage',
               'sphinx.ext.autosummary',
-              'sphinx.ext.linkcode',
               'sphinx.ext.intersphinx',
               'pymordocstring',
               'sphinx.ext.mathjax',
-              'sphinx_qt_documentation',
               'autoapi.extension',
               'autoapi_pymor',
               ]
@@ -128,10 +126,8 @@ html_title = "%s v%s Manual" % (project, version)
 
 # The name of an image file (within the static path) to place at the top of
 # the sidebar.
-html_logo = '../../logo/pymor_logo_white.svg'
 
 # The name of an image file to use as favicon.
-html_favicon = '../../logo/pymor_favicon.png'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -251,10 +247,6 @@ intersphinx_mapping = {'python': ('https://docs.python.org/3', None),
                        'Sphinx': (' https://www.sphinx-doc.org/en/master/', None)}
 
 modindex_common_prefix = ['pymor.']
-
-
-# make intersphinx link to pyside2 docs
-qt_documentation = 'PySide2'
 
 
 autoapi_dirs = [src_dir / 'pymor']
